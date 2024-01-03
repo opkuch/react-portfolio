@@ -1,7 +1,16 @@
-.document-container {
+.pdf-page {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+  .document-container {
+
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 14px;
     height: 100%;
     align-items: center;
     font-size: 50pt;

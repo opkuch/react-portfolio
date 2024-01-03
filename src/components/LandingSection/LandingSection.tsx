@@ -7,9 +7,9 @@ const LandingSection: React.FC<{ isPanesShuttered: boolean }> = ({ isPanesShutte
         Nadav <span className="highlight">Ben Hur</span>
       </span>
       <div className="tag-box">
-        <span>web technologies</span>
-        <span className="center">software development</span>
-        <span>single page apps</span>
+        <span><span className="emphasis">web</span>technologies</span>
+        <span className="center">software <span className="emphasis">development</span></span>
+        <span><span className="emphasis">single-page</span> apps</span>
       </div>
     </section>
   );

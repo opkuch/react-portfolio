@@ -17,7 +17,7 @@
       min-height: 81px;
       min-width: 81px;
       position: absolute;
-      top: -2px;
+      top: -3px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -25,9 +25,10 @@
       z-index: 99;
       transition: filter .4s linear;
       -webkit-transition: -webkit-filter .4s linear;
+      filter: saturate(150%);
       &:hover {
-        -webkit-filter: saturate(200%);
-        filter: saturate(200%);
+        -webkit-filter: saturate(300%);
+        filter: saturate(300%);
       }
       &.shake {
         animation: shake 7s infinite;

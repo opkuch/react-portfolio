@@ -1,109 +1,8 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: "Raleway";
-}
-
-.app-container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-@keyframes shake {
-  92% {
-    transform: translate(2px, 1px) rotate(0deg);
-  }
-  92.5% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  93% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  93.5% {
-    transform: translate(0px, 2px) rotate(0deg);
-  }
-  94% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  94.5% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  95% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  95.5% {
-    transform: translate(2px, 1px);
-  }
-  96% {
-    transform: translate(2px, 1px) rotate(0deg);
-  }
-  96.5% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  97% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  97.5% {
-    transform: translate(0px, 2px) rotate(0deg);
-  }
-  98% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  98.5% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  99% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  99.5% {
-    transform: translate(2px, 1px) rotate(-1deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-@keyframes drift {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(1920px);
-  }
-}
-
-@keyframes toBottomFromTop {
-  49% {
-    transform: translateY(100%);
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  51% {
-    opacity: 1;
-  }
-}
-
-@keyframes toBottomFromTop {
-  49% {
-    transform: translateY(100%);
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  51% {
-    opacity: 1;
-  }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400&family=Ropa+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500&display=swap&family=M+PLUS+Code+Latin:wght@100;400;700&display=swap&family=Montserrat:wght@400;700&family=Raleway:wght@400;500;600;700&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400&family=Ropa+Sans&display=swap");
+@import "./styles/basic";
+@import "./styles/animations";
+@import "./components//Button/button";
 @import "./components/Cloud/clouds";
 @import "./components/LandingSection/landing-section";
 @import "./components/Logo/logo";
@@ -111,3 +10,5 @@ body {
 @import "./components/Bar/bar";
 @import "./components/BarList/bar-list";
 @import "./components/PdfContainer/pdf-container";
+
+

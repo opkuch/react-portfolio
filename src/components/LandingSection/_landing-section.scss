@@ -8,28 +8,33 @@
   }
 
   .title {
-    font-family: "Raleway";
+    font-family: "M PLUS Code Latin";
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
     text-align: center;
-    top: 30%;
+    letter-spacing: 0.2em;
+    top: 26%;
     text-transform: uppercase;
-    font-size: 35pt;
-    letter-spacing: 0.3em;
-    color: #8e55b5;
+    font-size: 50pt;
+    background-color: transparent;
+    color: #64447e;
+    filter: hue-rotate(100);
+    z-index: 999;
     z-index: 5;
     font-weight: 400;
     .highlight {
-      font-family: "Montserrat";
+      letter-spacing: 0.3em;
+
       color: #1d134b;
       letter-spacing: 0.4em;
-      font-weight: 400;
+      font-weight: 700;
     }
   }
 
   .tag-box {
+    font-family: 'Raleway';
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -38,7 +43,7 @@
     position: absolute;
     bottom: 20%;
     z-index: 99;
-    color: #fefefe;
+    color: #1d134b;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     margin: 0 auto;
@@ -46,10 +51,16 @@
     right: 0;
     text-align: center;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 700;
 
     span {
-      font-size: 26px;
+      font-size: 20px;
+      font-weight: 400;
+      .emphasis {
+        color: rgb(0, 53, 88);
+        margin-inline: 7px;
+        font-weight: 700;
+      }
     }
   }
 

@@ -1,14 +1,26 @@
 .bars {
   .bars-title {
+    font-family: 'Laila';
+    font-weight: 100;
     color: #fefefe;
-    font-size: 1.25rem;
+    font-size: 1.08rem;
+    
+    .emphasis {
+      font-size: 1.5rem;
+      color: #dac6ff;
+
+      &.emphasis-blue {
+        color: rgb(142, 167, 250);
+
+      }
+    }
   }
 
   .bars-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 14px;
   }
   height: 100%;
   max-height: 90%;
@@ -16,6 +28,7 @@
   padding: 10%;
   gap: 50px;
   overflow-y: auto;
+  align-items: center;
   > * {
     flex: 1;
   }
@@ -27,10 +40,16 @@
   .frnt-bars,
   .server-bars {
     display: flex;
-    flex-direction: column;
     padding: 15px;
-    background-color: #08111ee5;
-    box-shadow: 5px 0 30px rgba(255, 255, 255, 0.089);
+    gap: 14px;
+    // background-color: #08111ee5;
+    // box-shadow: 5px 0 30px rgba(255, 255, 255, 0.089);
     border-radius: 10px;
   }
+}
+.frnt-bars {
+  flex-direction: column;
+}
+.server-bars {
+  flex-direction: column-reverse;
 }
