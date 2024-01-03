@@ -11,12 +11,6 @@ function App() {
 
   const onLogoClick = () => {
     setIsPanesShuttered(!isPanesShuttered);
-    // setPanes((prevPanes) => {
-    //   const thirdPaneCopy = JSON.parse(JSON.stringify(panes[panes.findIndex(pane => pane.id === 3)]))
-    //   thirdPaneCopy.start = !thirdPaneCopy.start;
-    //     const updatedPanes = [...prevPanes.filter((prev) => prev.id !== 3), thirdPaneCopy]
-    //   return updatedPanes;
-    // });
     setPanes((panes) => {
       const paneThreeCopy = JSON.parse(JSON.stringify(panes.paneThree));
       paneThreeCopy.start = !paneThreeCopy.start;
