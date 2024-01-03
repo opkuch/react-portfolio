@@ -18,7 +18,7 @@ const PdfContainer = () => {
               width > 1600
                 ? width / 1450
                 : width > 1000
-                ? width / 1200
+                ? width / 1300
                 : width / 750
             }
           />

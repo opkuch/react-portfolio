@@ -4,12 +4,13 @@ const LandingSection: React.FC<{ isPanesShuttered: boolean }> = ({ isPanesShutte
   return (
     <section className={`landing-sect ${!isPanesShuttered ? "shutter" : ""}`}>
       <span className="title">
-        Nadav <span className="highlight">Ben Hur</span>
+        Nadav<div className="highlight">Benhur</div>
+      <span className="sub">software & web</span>
       </span>
       <div className="tag-box">
-        <span><span className="emphasis">web</span>technologies</span>
-        <span className="center">software <span className="emphasis">development</span></span>
-        <span><span className="emphasis">single-page</span> apps</span>
+        <span>&#x2022;<span className="emphasis">web</span>technologies&#x2022;</span> 
+        <span className="center">&#x2022;software <span className="emphasis">development</span>&#x2022;</span>
+        <span>&#x2022;<span className="emphasis">single-page</span> apps&#x2022;</span>
       </div>
     </section>
   );

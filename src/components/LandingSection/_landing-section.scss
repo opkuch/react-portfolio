@@ -14,22 +14,38 @@
     right: 0;
     margin: 0 auto;
     text-align: center;
-    letter-spacing: 0.2em;
-    top: 26%;
+    letter-spacing: 0.3em;
+    top: 13%;
     text-transform: uppercase;
     font-size: 50pt;
     background-color: transparent;
-    color: #64447e;
+    color: #008ac0;
+    text-shadow: 2px 0 2px rgba(116, 116, 116, 0.8);
     filter: hue-rotate(100);
     z-index: 999;
     z-index: 5;
-    font-weight: 400;
+    font-weight: 700;
+    word-break: break-all;
+
     .highlight {
       letter-spacing: 0.3em;
-
       color: #1d134b;
-      letter-spacing: 0.4em;
-      font-weight: 700;
+      letter-spacing: 0.5em;
+      margin-inline-start: 1.5rem;
+    }
+
+    .sub {
+      font-size: .8rem;
+      font-family: 'Laila';
+      letter-spacing: .5rem;
+      color: #000;
+      position: relative;
+      bottom: 40px;
+      text-shadow: 0 0 #fff;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 40pt;
     }
   }
 
@@ -39,9 +55,9 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 20px;
     position: absolute;
-    bottom: 20%;
+    bottom: 22%;
     z-index: 99;
     color: #1d134b;
     text-transform: uppercase;

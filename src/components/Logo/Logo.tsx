@@ -1,5 +1,5 @@
 import React from "react";
-import LogoSrc from "../../assets/logo.png";
+import LogoSrc from "../../assets/alogo.png";
 
 const Logo: React.FC<{onLogoClick: () => void, isPanesShuttered: boolean}> = ({onLogoClick, isPanesShuttered}) => {
   return (

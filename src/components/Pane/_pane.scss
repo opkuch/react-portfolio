@@ -4,7 +4,7 @@
   -ms-transform: -ms-transform 0.3s;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s, height 0.3s, width 0.3s, position 0.3s ease, filter 0.3s ease;
-  opacity: 0.95;
+  opacity: 0.90;
 
   .content {
     height: 100%;
@@ -40,7 +40,7 @@
   }
 
   &.p1 {
-    background-image: linear-gradient(135deg, #050f25 0%, #003050 100%);
+    background-image: linear-gradient(135deg, #75c7f1 0%, #003f69 100%);
     z-index: 16;
     -webkit-transform: translateX(41.9%);
     transform: translateX(41.9%);
@@ -51,7 +51,7 @@
     // -webkit-transition: opacity 0.1s, -webkit-transform 0.3s, right 0.3s;
 
     .header {
-      color: #bba2ff;
+      color: #a2e3ff;
       left: 35px;
       bottom: 5%;
     }
@@ -101,9 +101,9 @@
     pointer-events: all;
     background-image: -webkit-linear-gradient(
       75deg,
-      #6767af 0%,
-      #6e64bb 56%,
-      #6f629d 100%
+      #6797af 0%,
+      #649ebb 56%,
+      #62869d 100%
     );
     z-index: 13;
     bottom: -20%;
@@ -113,7 +113,7 @@
     height: 62vh;
 
     .header {
-      color: #bba2ff;
+      color: #a2daff;
       top: 5%;
       right: 35px;
       opacity: 1;
@@ -135,8 +135,8 @@
     &.shutter {
       -ms-transform: translate(-42%, 100%);
       -webkit-transform: translate(-42%, 100%);
-      background: rgba(0, 0, 0, 0.08);
-      box-shadow: 10px 0 50px rgba(51, 51, 51, 0.4);
+      background: rgba(0, 0, 0, 0.06);
+      box-shadow: 10px 0 75px rgba(51, 51, 51, 0.3);
     }
 
     &.start {

@@ -1,4 +1,5 @@
 .clouds {
+  position: relative;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -21,6 +22,7 @@
     width: 8000px;
     left: -2000px;
     position: absolute;
+
   }
 
   .cloud-1 {
@@ -47,7 +49,7 @@
     background-position: bottom left;
     animation: drift 200s linear infinite;
     -webkit-animation: drift 200s linear infinite;
-    background-color: #8377a6;
+    background: linear-gradient(to right, #aedfff 31%, rgb(255, 234, 0) 70%);
     margin-top: -1px;
     z-index: 1;
   }
