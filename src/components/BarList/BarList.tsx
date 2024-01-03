@@ -1,4 +1,3 @@
-import React from "react";
 import Bar from "../Bar/Bar";
 import { BarsEnum } from "../../types/bars.types";
 

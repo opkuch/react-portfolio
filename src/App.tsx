@@ -3,11 +3,8 @@ import Clouds from "./components/Cloud/Clouds";
 import LandingSection from "./components/LandingSection/LandingSection";
 import Logo from "./components/Logo/Logo";
 import PaneList from "./components/PaneList/PaneList";
-import Bar from "./components/Bar/Bar";
 import { createInitialPanes } from "./consts/panes";
-import { PaneData, PaneKeys, PaneType } from "./types/pane.types";
-import PdfContainer from "./components/PdfContainer/PdfContainer";
-import BarList from "./components/BarList/BarList";
+import { PaneData, PaneType } from "./types/pane.types";
 
 function App() {
   const [isPanesShuttered, setIsPanesShuttered] = useState(true);
