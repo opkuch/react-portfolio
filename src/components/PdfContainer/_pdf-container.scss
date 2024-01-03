@@ -1,0 +1,15 @@
+.document-container {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    font-size: 50pt;
+    text-transform: uppercase;
+    color: #fff;
+
+    .react-pdf__Page__canvas {
+        border-radius: 5px;
+    }
+}
+

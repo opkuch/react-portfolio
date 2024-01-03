@@ -1,0 +1,73 @@
+.landing-sect {
+  transition: opacity 0.8s ease;
+  opacity: 1;
+  span {
+    cursor: default;
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+
+  .title {
+    font-family: "Raleway";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    top: 30%;
+    text-transform: uppercase;
+    font-size: 35pt;
+    letter-spacing: 0.3em;
+    color: #8e55b5;
+    z-index: 5;
+    font-weight: 400;
+    .highlight {
+      font-family: "Montserrat";
+      color: #1d134b;
+      letter-spacing: 0.4em;
+      font-weight: 400;
+    }
+  }
+
+  .tag-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 7px;
+    position: absolute;
+    bottom: 20%;
+    z-index: 99;
+    color: #fefefe;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+
+    span {
+      font-size: 26px;
+    }
+  }
+
+  &.shutter {
+    .tag-box {
+      span {
+        opacity: 0;
+        pointer-events: none;
+    }
+    z-index: 0;
+    }
+
+    .title {
+        opacity: 0;
+    }
+  }
+
+  .show {
+    opacity: 1;
+  }
+}
