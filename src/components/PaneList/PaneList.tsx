@@ -1,14 +1,15 @@
-import React from "react";
-import Pane from "../Pane/Pane";
-import { PaneData } from "../../types/pane.types";
-import PdfContainer from "../PdfContainer/PdfContainer";
-import BarList from "../BarList/BarList";
+import React from 'react'
+import Pane from '../Pane/Pane'
+import { PaneData } from '../../types/pane.types'
+import PdfContainer from '../PdfContainer/PdfContainer'
+import BarList from '../BarList/BarList'
 
 const PaneList: React.FC<{
-  isPanesShuttered: boolean;
-  panes: PaneData;
+  isPanesShuttered: boolean
+  panes: PaneData
 }> = ({ panes }) => {
-  const { paneOne, paneTwo, paneThree, paneFour } = panes;
+  const { paneOne, paneTwo, paneThree, paneFour } = panes
+
   return (
     <>
       <Pane
@@ -18,7 +19,8 @@ const PaneList: React.FC<{
         start={paneOne.start}
         title={paneOne.title}
         onClick={paneOne.onClick}
-        children={<BarList />}
+        skew={true}
+        children={<BarList showBar=''/>}
       />
       <Pane
         id={paneTwo.id}
@@ -46,7 +48,7 @@ const PaneList: React.FC<{
         onClick={paneFour.onClick}
       />
     </>
-  );
-};
+  )
+}
 
-export default PaneList;
+export default PaneList

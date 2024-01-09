@@ -23,6 +23,9 @@
     left: -2000px;
     position: absolute;
 
+    @media (max-width: 400px) {
+      height: 100vh;
+        }
   }
 
   .cloud-1 {
@@ -49,7 +52,7 @@
     background-position: bottom left;
     animation: drift 200s linear infinite;
     -webkit-animation: drift 200s linear infinite;
-    background: linear-gradient(to right, #aedfff 31%, rgb(255, 234, 0) 70%);
+    background: linear-gradient(to right, #aedfff 31%, rgb(255, 234, 0) 85%);
     margin-top: -1px;
     z-index: 1;
   }

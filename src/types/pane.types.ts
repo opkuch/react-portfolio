@@ -7,6 +7,7 @@ export interface PaneType {
     isShutter: boolean,
     open: boolean,
     start: boolean,
+    skew?: boolean,
     children?: ReactElement
 }
 

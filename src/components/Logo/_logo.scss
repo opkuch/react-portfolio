@@ -1,23 +1,31 @@
 .square {
-  height: 100%;
-  width: 100%;
   text-align: center;
   color: #333;
   background: transparent;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    .logo {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  min-width: 100px;
+  width: fit-content;
+  height: fit-content;
+  .logo {
     cursor: pointer;
-    max-height: 110px;
-    z-index: 99;
+    max-height: 100px;
     position: absolute;
+    top: -3px;
+    bottom: 0;
+    left: 0;
+    margin: auto auto;
+    z-index: 99;
     transition: filter 0.4s linear;
     -webkit-transition: -webkit-filter 0.4s linear;
+    filter: saturate(150%);
     &:hover {
-      -webkit-filter: saturate(200%);
-      filter: saturate(200%);
+      -webkit-filter: saturate(300%);
+      filter: saturate(300%);
     }
     &.shake {
       animation: shake 7s infinite;
@@ -25,11 +33,11 @@
     }
 
     @media (max-width: 650px) {
-      max-width: 80px;
+      max-width: 75px;
     }
   }
 
   @media (max-width: 650px) {
-    min-width: 80px;
+    min-width: 75px;
   }
 }

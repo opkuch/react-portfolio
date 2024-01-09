@@ -1,11 +1,28 @@
 * {
     box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      width: 0;
+  }
+  
+  &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background-color: transparent;
+      border: 1px solid transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: transparent;
+  }
+
   }
   
   html, body {
     margin: 0;
     overflow: hidden;
     font-family: "Raleway";
+    
   }
   
   .app-container {
@@ -17,3 +34,5 @@
   a {
    all: unset;
   }
+
+ 
