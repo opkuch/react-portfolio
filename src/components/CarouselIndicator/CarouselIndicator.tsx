@@ -4,12 +4,16 @@ const CarouselIndicator: React.FC<{
   isSelected: boolean
   index: number
   currentSlide: number
-}> = ({ isSelected, index, currentSlide }) => {
+  onClick: (
+    e: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>
+  ) => void
+}> = ({ isSelected, index, currentSlide, onClick }) => {
   return (
     <div
       className={`indicator ${
-       ( isSelected || index <= currentSlide) && 'selected'
+        (isSelected || index <= currentSlide) && 'selected'
       }`}
+      onClick={onClick}
     ></div>
   )
 }

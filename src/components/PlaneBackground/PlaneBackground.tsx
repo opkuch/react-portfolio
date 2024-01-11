@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react'
+import  { useRef } from 'react'
 const PlaneBackground = () => {
     console.log('ho');
     
     const planeRef = useRef(null)
-  const planeStyle = useState()
+  // const planeStyle = useState()
 
   setTimeout(() => {
 

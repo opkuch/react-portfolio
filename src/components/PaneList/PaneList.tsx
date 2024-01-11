@@ -3,9 +3,6 @@ import Pane from "../Pane/Pane";
 import { PaneData } from "../../types/pane.types";
 import PdfContainer from "../PdfContainer/PdfContainer";
 import BarList from "../BarList/BarList";
-import Card from "../Card/Card";
-import trelloImage from "../../assets/task_file.jpg";
-import CarouselContainer from "../CarouselContainer/CarouselContainer";
 const PaneList: React.FC<{
   isPanesShuttered: boolean;
   panes: PaneData;
@@ -19,7 +16,6 @@ const PaneList: React.FC<{
         open={paneOne.open}
         start={paneOne.start}
         title={paneOne.title}
-        onClick={paneOne.onClick}
         skew={true}
         children={<BarList skew={true} />}
       />
@@ -29,7 +25,6 @@ const PaneList: React.FC<{
         open={paneTwo.open}
         start={paneTwo.start}
         title={paneTwo.title}
-        onClick={paneTwo.onClick}
         children={<></>}
       />
       <Pane
@@ -38,7 +33,6 @@ const PaneList: React.FC<{
         open={paneThree.open}
         start={paneThree.start}
         title={paneThree.title}
-        onClick={paneThree.onClick}
         children={<PdfContainer />}
       />
       <Pane
@@ -47,7 +41,6 @@ const PaneList: React.FC<{
         open={paneFour.open}
         start={paneFour.start}
         title={paneFour.title}
-        onClick={paneFour.onClick}
       />
     </>
   );

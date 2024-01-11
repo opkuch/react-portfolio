@@ -1,7 +1,7 @@
 import Bar from "../Bar/Bar";
 import { BarsEnum } from "../../types/bars.types";
 
-const BarList: React.FC<{ skew: boolean }> = ({ skew }) => {
+const BarList: React.FC<{ skew: boolean }> = () => {
   return (
     <div className={`bars`}>
       <div className="frnt-bars">

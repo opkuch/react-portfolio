@@ -1,17 +1,15 @@
 import Clouds from "../../components/Cloud/Clouds";
 import LandingSection from "../../components/LandingSection/LandingSection";
-import Logo from "../../components/Logo/Logo";
 import ScrollDown from "../../components/ScrollDown/ScrollDown";
 
-const LandingPage: React.FC<{}> = () => {
+const LandingPage: React.FC<{inView: boolean}> = ({inView}) => {
 
 
   return (
-    <div className="app-container">
+    <div className="page landing">
       <LandingSection  />
-      <Clouds />
-      <Clouds isInverse={true} />
-      <ScrollDown />
+      <Clouds inView={inView}/>
+      {inView && <ScrollDown />}
     </div>
   );
 }

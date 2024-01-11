@@ -48,25 +48,25 @@
     font-weight:bold;
     letter-spacing:.1em;
   }
-  #scroll-down::before {
-      -webkit-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
-      /* Safari 4+ */
+  // #scroll-down::before {
+  //     -webkit-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  //     /* Safari 4+ */
       
-      -moz-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
-      /* Fx 5+ */
+  //     -moz-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  //     /* Fx 5+ */
       
-      -o-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
-      /* Opera 12+ */
+  //     -o-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  //     /* Opera 12+ */
       
-      animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
-      /* IE 10+, Fx 29+ */
+  //     animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  //     /* IE 10+, Fx 29+ */
       
-      position: absolute;
-      top: 0px;
-      left: 50%;
-      margin-left: -1px;
-      width: 2px;
-      height: 90px;
-      background: #802632;
-      content: ' ';
-  }
+  //     position: absolute;
+  //     top: 0px;
+  //     left: 50%;
+  //     margin-left: -1px;
+  //     width: 2px;
+  //     height: 90px;
+  //     background: #802632;
+  //     content: ' ';
+  // }
