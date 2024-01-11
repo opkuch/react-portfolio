@@ -1,0 +1,22 @@
+.card-container {
+
+  height: 500px;
+  width: 500px;
+  // position: relative;
+  // left: 50%;
+  // top: 20%;
+
+  h1 {
+    color: white;
+    font-size: 20pt;
+    position: absolute;
+    top: -20px;
+    text-transform: capitalize;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    clip-path: circle(50%);
+  }
+}

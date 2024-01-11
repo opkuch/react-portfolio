@@ -1,11 +1,10 @@
-.pane {
-  position: fixed;
+.page {
   cursor: pointer;
   -ms-transform: -ms-transform 0.3s;
   -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s, height 0.3s, width 0.3s, position 0.3s ease, filter 0.3s ease;
-  opacity: 0.90;
-
+  transition: transform 0.3s, height 0.3s, width 0.3s, position 0.3s ease, filter 0.3s ease, opacity .3s ease, background-position .3s ease;
+  height: 100vh;
+  width: 100vw;
   .content {
     height: 100%;
     &.hide {
@@ -13,23 +12,7 @@
     }
   }
 
-  &:not(.open, .start):hover {
-    -webkit-filter: saturate(200%);
-    filter: saturate(200%);
-  }
-
-  &.open {
-    bottom: 0 !important;
-    opacity: 1 !important;
-    z-index: 100 !important;
-    height: 100vh !important;
-    width: 100vw !important;
-    -ms-transform: translateX(0) !important;
-    -webkit-transform: translateX(0) !important;
-    transform: translateX(0) !important;
-    cursor: default;
-  }
-
+  
   .header {
     font-size: 21pt;
     letter-spacing: 0.2em;
@@ -37,146 +20,19 @@
     font-weight: 500;
     text-transform: uppercase;
     opacity: 1;
-  }
 
-  &.p1 {
-    background-image: linear-gradient(135deg, #75c7f1 0%, #003f69 100%);
-    z-index: 16;
-    -webkit-transform: translateX(41.9%);
-    transform: translateX(41.9%);
-    top: 0;
-    width: 100%;
-    height: 42vh;
-    // transition: opacity 0.1s, transform 0.3s, right 0.3s;
-    // -webkit-transition: opacity 0.1s, -webkit-transform 0.3s, right 0.3s;
-
-    .header {
-      color: #a2e3ff;
-      left: 35px;
-      bottom: 5%;
-    }
-
-    &.shutter {
-      -ms-transform: translate(0, -100%);
-      -webkit-transform: translate(0, -100%);
-      transform: translate(0, -100%);
-    }
-
-    &.extend {
-      -ms-transform: translate(0, 0);
-      -webkit-transform: translate(0, 0);
-      transform: translate(0, 0);
-    }
-
-    &.retract {
-      -ms-transform: translate(42%, -100%);
-      -webkit-transform: translate(42%, -100%);
-      transform: translate(42%, -100%);
+    @media (max-width: 600px) {
+      font-size: 16px;
     }
   }
 
-  &.p2 {
-    background-image: linear-gradient(135deg, #07002d 0%, #110022 100%);
-    z-index: 15;
-    right: 0;
-    bottom: 0;
-    width: 42%;
-    height: 100%;
-    transform: translateY(42%);
-
-    .header {
-      color: #7f49c0;
-      top: 5%;
-      left: 30px;
-    }
-
-    &.shutter {
-      -ms-transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%);
-    }
+  &.technology {
+    background: #83b5ff;
+    background-position: 0 200px;
+    animation: backgroundPositionFade 2s forwards;
   }
 
-  &.p3 {
-    pointer-events: all;
-    background-image: -webkit-linear-gradient(
-      75deg,
-      #6797af 0%,
-      #649ebb 56%,
-      #62869d 100%
-    );
-    z-index: 13;
-    bottom: -20%;
-    width: 100%;
-    -webkit-transform: translateX(-41.9%);
-    transform: translateX(-41.9%);
-    height: 62vh;
-
-    .header {
-      color: #a2daff;
-      top: 5%;
-      right: 35px;
-      opacity: 1;
-    }
-
-    &.extend .header {
-      left: auto;
-    }
-
-    &.extend {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-
-    &.start .header {
-      opacity: 0;
-    }
-
-    &.shutter {
-      -ms-transform: translate(-42%, 100%);
-      -webkit-transform: translate(-42%, 100%);
-      background: rgba(0, 0, 0, 0.06);
-      box-shadow: 10px 0 75px rgba(51, 51, 51, 0.3);
-    }
-
-    &.start {
-      cursor: default;
-      -ms-transform: translateY(-13%);
-      -webkit-transform: translateY(-13%);
-      transform: translateY(-13%);
-    }
-  }
-
-  &.p4 {
-    background: #c1b1ee4b;
-    background-image: -webkit-linear-gradient(138deg, rgb(63, 52, 96) 0%, rgb(50, 43, 100) 71%);
-    z-index: 12;
-    left: 0;
-    top: 0;
-    width: 42%;
-    height: 100%;
-    transform: translateY(-42%);
-
-    .header {
-      color: #7f49c0;
-      right: 35px;
-      bottom: 5%;
-    }
-
-    &.shutter {
-      -ms-transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
-  }
-
-  .coming-soon {
+  &.resume {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50pt;
-    color: #fff;
-    height: 100%;
-    text-transform: uppercase;
   }
 }

@@ -3,10 +3,10 @@ import { ReactElement } from "react"
 export interface PaneType {
     id: number,
     title: string,
-    onClick: (paneId: number) => void,
     isShutter: boolean,
     open: boolean,
     start: boolean,
+    skew?: boolean,
     children?: ReactElement
 }
 

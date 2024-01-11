@@ -1,35 +1,15 @@
 .square {
-  height: 100%;
-  width: 100%;
   text-align: center;
   color: #333;
   background: transparent;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    .logo {
-    cursor: pointer;
-    max-height: 110px;
-    z-index: 99;
-    position: absolute;
-    transition: filter 0.4s linear;
-    -webkit-transition: -webkit-filter 0.4s linear;
-    &:hover {
-      -webkit-filter: saturate(200%);
-      filter: saturate(200%);
-    }
-    &.shake {
-      animation: shake 7s infinite;
-      -webkit-animation: shake 7s infinite;
-    }
-
-    @media (max-width: 650px) {
-      max-width: 80px;
-    }
-  }
-
-  @media (max-width: 650px) {
-    min-width: 80px;
-  }
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  min-width: 100px;
+  width: fit-content;
+  height: fit-content;
+  z-index: 555;
 }

@@ -1,0 +1,78 @@
+$body: #aedeff;
+$stroke: #f5f5f559;
+$shadow: #ee653bc5;
+$halftone: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHElEQVQYV2NUVFT8f//+fUYGBgYGMAEDcA5IBQCKJQVmn76DhAAAAABJRU5ErkJggg==");
+
+@mixin stroke-width($property) {
+	-webkit-text-stroke-width: $property;
+	-moz-text-stroke-width: $property;
+}
+
+@mixin stroke-color($property) {
+	-webkit-text-stroke-color: $property;
+	-moz-text-stroke-color: $property;
+}
+
+@mixin background-clip($property) {
+	-webkit-background-clip: $property;
+	-moz-background-clip: $property;
+	background-clip: $property;
+}
+
+@mixin fill-color($property) {
+	-webkit-text-fill-color: $property;
+	-moz-text-fill-color: $property;
+}
+
+.stroke {
+	@include stroke-width(1px);
+	@include stroke-color($stroke);
+	color: transparent;
+}
+
+.shadow {
+	text-shadow: 3px 3px $shadow;
+}
+
+.stroke-shadow {
+	color: $body;
+	text-shadow: -2px 0 $stroke, 0 -2px $stroke, 2px 0 $stroke, 0 2px $stroke,
+		2px 2px $stroke, -2px -2px $stroke, -2px 2px $stroke, 2px -2px $stroke,
+		3px 3px $shadow;
+}
+
+.halftone {
+	position: relative;
+    white-space: nowrap;
+	&:after {
+		content: "Nadav Ben Hur";
+		background: $halftone repeat;
+		font-size: inherit;
+		letter-spacing: inherit;
+		left: calc(50% + 3px);
+		position: absolute;
+		top: calc(50% + 3px);
+		transform: translate(-50%, -50%);
+		z-index: -1;
+		@include stroke-width(0);
+		@include background-clip(text);
+		@include fill-color(transparent);
+	}
+}
+
+.halftone-color {
+	&:after {
+		background-color: $shadow;
+	}
+}
+
+.title-container {
+    font-family: inherit;
+
+	span{
+		font-size: inherit;
+		font-weight: bold;
+		letter-spacing: 5px;
+		margin: 0;
+	}
+}

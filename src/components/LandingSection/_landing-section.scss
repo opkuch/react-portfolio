@@ -15,49 +15,55 @@
     margin: 0 auto;
     text-align: center;
     letter-spacing: 0.3em;
-    top: 13%;
+    top: 25%;
     text-transform: uppercase;
-    font-size: 50pt;
+    font-size: 66pt;
     background-color: transparent;
-    color: #008ac0;
+    color: #b6d6e2;
     text-shadow: 2px 0 2px rgba(116, 116, 116, 0.8);
-    filter: hue-rotate(100);
     z-index: 999;
     z-index: 5;
     font-weight: 700;
     word-break: break-all;
+    mix-blend-mode: exclusion;
 
     .highlight {
       letter-spacing: 0.3em;
-      color: #1d134b;
       letter-spacing: 0.5em;
       margin-inline-start: 1.5rem;
     }
 
     .sub {
-      font-size: .8rem;
-      font-family: 'Laila';
-      letter-spacing: .5rem;
-      color: #000;
+      font-size: 0.8rem;
+      font-family: "Laila";
+      letter-spacing: 0.5rem;
+      color: #d4d4d4;
       position: relative;
       bottom: 40px;
-      text-shadow: 0 0 #fff;
+      @media (max-width: 400px) {
+        font-size: 0.5rem;
+        bottom: 25px;
+      }
     }
 
     @media (max-width: 600px) {
       font-size: 40pt;
     }
+
+    @media (max-width: 400px) {
+      font-size: 25pt;
+    }
   }
 
   .tag-box {
-    font-family: 'Raleway';
+    font-family: "Raleway";
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
     position: absolute;
-    bottom: 22%;
+    bottom: 20%;
     z-index: 99;
     color: #1d134b;
     text-transform: uppercase;
@@ -78,6 +84,10 @@
         font-weight: 700;
       }
     }
+
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   &.shutter {
@@ -85,16 +95,45 @@
       span {
         opacity: 0;
         pointer-events: none;
-    }
-    z-index: 0;
+      }
+      z-index: 0;
     }
 
     .title {
-        opacity: 0;
+      opacity: 0;
     }
   }
 
   .show {
     opacity: 1;
+  }
+}
+
+strong {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.75rem;
+
+    // Position the line behind the text so that
+    // it is still easily readable
+    z-index: -1;
+
+    // The SVG is added as an SVG background image
+    background-image: url("/src/assets/underline.svg");
+    background-repeat: no-repeat;
+
+    // This allows the SVG to flex in size to fit
+    // any length of word. If the word is short,
+    // the SVG will be stretched vertically, if it
+    // is long, the SVG will be stretched horizontally.
+    // The jagged nature of this particular SVG works
+    // with this transforming.
+    background-size: cover;
   }
 }

@@ -1,69 +1,46 @@
-import { useCallback, useEffect, useState } from "react";
-import Clouds from "./components/Cloud/Clouds";
-import LandingSection from "./components/LandingSection/LandingSection";
-import Logo from "./components/Logo/Logo";
-import PaneList from "./components/PaneList/PaneList";
-import { createInitialPanes } from "./consts/panes";
-import { PaneData, PaneType } from "./types/pane.types";
+import { useCallback, useEffect, useState } from 'react'
+import CarouselContainer from './components/CarouselContainer/CarouselContainer'
+import PaneList from './components/PaneList/PaneList'
+import { createInitialPanes } from './consts/panes'
+import LandingPage from './slides/LandingPage/LandingPage'
+import { PaneData, PaneType } from './types/pane.types'
+import Pane from './components/Pane/Pane'
+import PdfContainer from './components/PdfContainer/PdfContainer'
+import BarList from './components/BarList/BarList'
+import PlaneBackground from './components/PlaneBackground/PlaneBackground'
+import TechnologyPage from './slides/TechnologyPage/TechnologyPage'
+import ResumePage from './slides/ResumePage/ResumePage'
 
 function App() {
-  const [isPanesShuttered, setIsPanesShuttered] = useState(true);
-
-  const onLogoClick = () => {
-    setIsPanesShuttered(!isPanesShuttered);
-    setPanes((panes) => {
-      const paneThreeCopy = JSON.parse(JSON.stringify(panes.paneThree));
-      paneThreeCopy.start = !paneThreeCopy.start;
-      const updatedPanes = createInitialPanes(onPaneClick);
-      updatedPanes.paneThree = paneThreeCopy;
-      return updatedPanes;
-    });
-  };
-
-  const onPaneClick = useCallback(
-    (paneId: number) => {
-      if (isPanesShuttered) return;
-      const updatedPanesValues = Object.values(panes).map((pane) => {
-        if (pane.id === paneId) {
-          pane.open = !pane.open;
-        }
-        return pane;
-      });
-      _setPanes(updatedPanesValues);
-    },
-    [isPanesShuttered]
-  );
-
-  const [panes, setPanes] = useState<PaneData>(createInitialPanes(onPaneClick));
-
-  useEffect(() => {
-    const updatedPanesValues = Object.values(panes).map((pane) => {
-      pane.isShutter = isPanesShuttered;
-      pane.onClick = onPaneClick; // Update the onClick function
-      return pane;
-    });
-
-    _setPanes(updatedPanesValues);
-  }, [isPanesShuttered, onPaneClick]);
-
-  const _setPanes = (updatedPanesValues: PaneType[]) => {
-    const updatedPanes = createInitialPanes(onPaneClick);
-    updatedPanes.paneOne = updatedPanesValues[0];
-    updatedPanes.paneTwo = updatedPanesValues[1];
-    updatedPanes.paneThree = updatedPanesValues[2];
-    updatedPanes.paneFour = updatedPanesValues[3];
-    setPanes(updatedPanes);
-  };
+  const [panes, setPanes] = useState<PaneData>(createInitialPanes())
+  const { paneOne, paneTwo, paneThree, paneFour } = panes
 
   return (
-    <div className="app-container">
-      <Logo isPanesShuttered={isPanesShuttered} onLogoClick={onLogoClick} />
-      <LandingSection isPanesShuttered={isPanesShuttered} />
-      <PaneList panes={panes} isPanesShuttered={!isPanesShuttered} />
-      <Clouds />
-      <Clouds isInverse={true} />
-    </div>
-  );
+    <>
+      {
+        <CarouselContainer>
+          <LandingPage />
+          <TechnologyPage />
+          <Pane
+            id={paneTwo.id}
+            isShutter={paneTwo.isShutter}
+            open={paneTwo.open}
+            start={paneTwo.start}
+            title={paneTwo.title}
+            children={<></>}
+          />
+          <ResumePage />
+          <Pane
+            id={paneFour.id}
+            isShutter={paneFour.isShutter}
+            open={paneFour.open}
+            start={paneFour.start}
+            title={paneFour.title}
+          />
+        </CarouselContainer>
+      }{' '}
+    </>
+  )
 }
 
-export default App;
+export default App

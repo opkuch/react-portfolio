@@ -1,10 +1,10 @@
 import React from "react";
-import LogoSrc from "../../assets/alogo.png";
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
-const Logo: React.FC<{onLogoClick: () => void, isPanesShuttered: boolean}> = ({onLogoClick, isPanesShuttered}) => {
+const Logo: React.FC<{}> = ({}) => {
   return (
-    <div className="square" id="square" onClick={onLogoClick}>
-      <img className={`logo ${isPanesShuttered? 'shake' : ''}`} src={LogoSrc} />
+    <div className="square" id="square">
+      <AnimatedButton text="Discover more.."/>
     </div>
   );
 };
