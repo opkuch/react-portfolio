@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'SteepOldstyle';
+    src: url('src/assets/fonts/SteepOldStyle/SteepOldstyle.woff2') format('woff2'),
+        url('src/assets/fonts/SteepOldStyle/SteepOldstyle.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Heptal Book";
+    src: url("src/assets/fonts/Heptal/Heptal.eot");
+    src: url("src/assets/fonts/Heptal/Heptal.eot?#iefix")format("embedded-opentype"),
+    url("src/assets/fonts/Heptal/Heptal.woff2")format("woff2"),
+    url("src/assets/fonts/Heptal/Heptal.woff")format("woff"),
+    url("src/assets/fonts/Heptal/Heptal.ttf")format("truetype"),
+    url("src/assets/fonts/Heptal/Heptal.svg#Heptal Book")format("svg");
+}
+
+
+
+

@@ -1,18 +1,13 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500&display=swap&family=M+PLUS+Code+Latin:wght@100;400;700&display=swap&family=Montserrat:wght@400;700&family=Raleway:wght@400;500;600;700&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400&family=Ropa+Sans&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500&display=swap&family=M+PLUS+Code+Latin:wght@100;400;700&display=swap&family=Montserrat:wght@400;700&family=Raleway:wght@400;500;600;700&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400&family=Ropa+Sans&display=swap");
+@import "./styles/variables";
+@import "./styles/fonts";
 @import "./styles/basic";
 @import "./styles/animations";
 @import "./components/Button/button";
-@import "./components/Title/title";
-@import "./components/Cloud/clouds";
-@import "./components/LandingSection/landing-section";
-@import "./components/Logo/logo";
-@import "./components/Pane/pane";
-@import "./components/Bar/bar";
-@import "./components/BarList/bar-list";
-@import "./components/PdfContainer/pdf-container";
 @import "./components/Card/card";
-@import "./components/AnimatedButton/animated-button";
-@import "./components/CarouselIndicator/carousel-indicator";
 @import "./components/ScrollDown/scroll-down";
-@import "./components/AnimatedPapers/papers";
+
+// PAGES
+
+@import "./pages/HomePage/home-page";

@@ -1,0 +1,31 @@
+:root {
+}
+// Dark/Light mode vars
+html[data-theme='light'] {
+    --c-text: rgb(27, 27, 27);
+    --c-bg: rgb(242, 242, 242);
+    --c-muted: rgb(70, 70, 70);
+    --c-highlight: rgb(0, 0, 0);
+}
+html {
+    --c-text: rgb(242, 242, 242);
+    --c-bg: rgb(0, 0, 0);
+    --c-muted: rgb(70, 70, 70);
+    --c-highlight: rgb(255, 255, 255);
+}
+// Colors
+$c-text: var(--c-text);
+$c-bg: var(--c-bg);
+$c-muted: var(--c-muted);
+$c-highlight: var(--c-highlight);
+
+// Text Sizes
+$text-xsmall: 0.75rem;
+$text-base: 22px;
+$text-medium: 2rem;
+$text-large: 3rem;
+
+// Fonts
+$font-family-serif: 'SteepOldstyle', Arial, Helvetica, sans-serif;
+$font-family-sans: 'Quattrocento Sans', Arial, Helvetica, sans-serif;
+$base-line-hight: 1.125;

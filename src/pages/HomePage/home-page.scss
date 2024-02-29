@@ -1,0 +1,10 @@
+@import "./parts/Header/header";
+@import "./parts/Gallery/grid-gallery";
+@import "./parts/GalleryItem/gallery-item";
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}

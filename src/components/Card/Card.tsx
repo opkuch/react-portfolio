@@ -1,29 +1,38 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import useMousePosition from '../../hooks/useMousePosition'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import useScreenSize from '../../hooks/useScreenSize'
+const Card: React.FC<{
+  imgSrc: string
+  title: string
+  subTitle: string
+  description: string
+  index: number
+  moveValue: number
+}> = ({ imgSrc, title, subTitle, description, index, moveValue }) => {
+  const { width } = useScreenSize()
+  const [isExpand, setIsExpand] = useState(false)
+  const cardContainerRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLDivElement>(null)
 
-const Card: React.FC<{ imgSrc: string; header: string; subHeader: string }> = ({
-  imgSrc,
-  header,
-  subHeader,
-}) => {
+  const cardClicked = () => {
+    if (width < 750) {
+      return
+    }
+    setIsExpand((isExpanded) => !isExpanded)
+    if (cardContainerRef.current) {
+      cardContainerRef.current?.classList.toggle('open')
+    }
+  }
+
   return (
-    <div className="card">
-      <div className="box">
-        <div className="content">
-          <div className="img">
-            <img src={imgSrc} />
-          </div>
-          <div className="cardContent">
-            <h3>
-              {header}
-              <span>{subHeader}</span>
-            </h3>
-          </div>
+    <div ref={cardContainerRef} className={`card-container`}>
+      <div className="content">
+        <div className="avatar">
+          <img src={imgSrc} />
         </div>
-        <ul className="sci">
-          <li style={{ '--i': 1 } as React.CSSProperties}>ashjodas asljdkhasjkhd asdhasd sajdhasjdh asdhasj dasdjas</li>
-          <li style={{ '--i': 2 } as React.CSSProperties}>ashjodas asljdkhasjkhd asdhasd sajdhasjdh asdhasj dasdjas</li>
-          <li style={{ '--i': 3 } as React.CSSProperties}>ashjodas asljdkhasjkhd asdhasd sajdhasjdh asdhasj dasdjas</li>
-        </ul>
+        <header>{title}</header>
       </div>
     </div>
   )

@@ -5,15 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-
     "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.0.2",
+    "gsap": "^3.12.4",
     "react": "^18.2.0",
+    "react-router": "^6.10.0",
+    "react-router-dom": "^6.10.0",
     "react-dom": "^18.2.0",
-    "react-pdf": "^7.6.0",
+    "react-icons": "^4.8.0",
+    "framer-motion": "^10.12.4",
     "react-responsive-carousel": "^3.2.23",
     "sass": "^1.69.6",
     "styled-components": "^6.1.6"
