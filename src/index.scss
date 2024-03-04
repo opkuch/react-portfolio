@@ -4,10 +4,19 @@
 @import "./styles/fonts";
 @import "./styles/basic";
 @import "./styles/animations";
-@import "./components/Button/button";
+@import "./styles/layout";
+@import "./styles/functions";
+@import "./styles/mixins";
+@import "./styles/tooltip";
+
+@import "./components/Cursor/cursor";
+@import "./components/InnerContent/inner-content";
 @import "./components/Card/card";
 @import "./components/ScrollDown/scroll-down";
+@import "./components/DarkModeSwitch/dark-mode-switch";
 
 // PAGES
 
 @import "./pages/HomePage/home-page";
+@import "./pages/ProjectDetails/project-details";
+@import "./pages/ProjectIndex/project-index";

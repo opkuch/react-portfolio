@@ -6,7 +6,7 @@ export function useGalleryAnimation(trigger: boolean) {
   const [isEnter, setIsEnter] = useState(false)
   const [scope, animate] = useAnimate();
 
-  useEffect(() => {
+  useEffect(() => {    
     setIsEnter(false)
     setTimeout(() => setIsEnter(true), 700)
   }, [trigger])

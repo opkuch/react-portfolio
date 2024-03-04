@@ -1,34 +1,21 @@
+import { useEffect, useState } from 'react'
 
-import React, { useCallback } from 'react';
-
-const mouseMoveHandler = (e: MouseEvent) => {
-    const y = e.clientY;
-    const x = e.clientX;
-
-    let moveX = x > 0 ? -x : x;
-    let moveY = y > 0 ? -y : y;
-    return {
-        moveX,
-        moveY
-    }
-};
-
-const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = React.useState({
-        moveX: 0,
-        moveY: 0,
-    });
-    const updateMousePosition = useCallback((e: MouseEvent) => {
-        const position = mouseMoveHandler(e)
-        setMousePosition(position);
-    }, [mousePosition]);
-    React.useEffect(() => {
-        window.addEventListener('mousemove', updateMousePosition);
+export const useMousePosition = () => {
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+    const [target, setTarget] = useState<Element | null>(null)
+    useEffect(() => {
+        function handler(ev: MouseEvent) {
+            const { clientX, clientY } = ev
+            setMousePos({ x: clientX, y: clientY })
+            if (ev.target !== target) {
+                setTarget(ev.target as Element)
+            }
+        }
+        
+        window.addEventListener('mousemove', handler)
         return () => {
-            window.removeEventListener('mousemove', updateMousePosition);
-        };
-    }, []);
-    return mousePosition;
+            window.removeEventListener('mousemove', handler)
+        }
+    }, [])
+    return { mousePos, target }
 }
-
-export default useMousePosition

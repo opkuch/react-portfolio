@@ -1,13 +1,12 @@
-import GridGallery from "./parts/Gallery/GridGallery";
+import Gallery from "./parts/Gallery/Gallery";
 import Header from "./parts/Header/Header";
 
-const HomePage = () => {
-
-
+const HomePage = () => {  
+  
   return (
     <div className="home-page"> 
       <Header />
-      <GridGallery />
+      <Gallery />
     </div>
   );
 }

@@ -1,0 +1,33 @@
+.projects-image {
+    display: none;
+    // flex: 0 0 200px;
+    flex-grow: 1;
+    @media (min-width: $break-medium) {
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        aspect-ratio: 2;
+        .img-container {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $c-text;
+            clip-path: polygon(0% calc(0), 100% calc(0), 100% calc(0), 0% calc(0));
+            > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    @media (min-width: $break-large) {
+        margin-inline-end: 4rem;
+    }
+}

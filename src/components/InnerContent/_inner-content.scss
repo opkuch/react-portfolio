@@ -1,0 +1,19 @@
+.inner-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-top: $layout-padding-md;
+    // justify-content: center;
+    width: 100%;
+    overflow-x: hidden;
+    padding-inline-start: $layout-padding-sm + 1.5rem;
+    padding-inline-end: $layout-padding-sm;
+    @media (min-width: $break-medium) {
+        padding-top: $layout-padding-md;
+        padding-inline: $layout-padding-md;
+    }
+    @media (min-width: $break-large) {
+        padding-top: $layout-padding-lg;
+        padding-inline: $layout-padding-lg;
+    }
+}
