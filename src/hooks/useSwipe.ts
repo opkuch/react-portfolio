@@ -18,7 +18,7 @@ export const useSwipe = ({ el }: { el: HTMLElement | null }) => {
             setTouchEnd(e.targetTouches[0].clientX)
         }
 
-        const onTouchEnd = (e: TouchEvent) => {
+        const onTouchEnd = (_e: TouchEvent) => {
             console.log(touchStart, touchEnd);
 
             if (!touchStart || !touchEnd) return

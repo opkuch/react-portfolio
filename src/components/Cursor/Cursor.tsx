@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useMousePosition } from '../../hooks/useMousePosition'
 import { BsPlus } from 'react-icons/bs'
 const Cursor = () => {

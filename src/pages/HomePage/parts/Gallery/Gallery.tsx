@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { projectsData } from '../../../../data/projects.data'
 import GalleryItem from '../GalleryItem/GalleryItem'
 import { useGalleryAnimation } from '../../../../hooks/useGalleryAnimation'
@@ -35,12 +35,12 @@ const Gallery = () => {
   }, [])
 
   useEffect(() => {
-    console.log(isRightSwipe.isRightSwipe);
-    
-    if (isRightSwipe.isRightSwipe) {
-      setCounter((last) => Math.abs(last) + 1)
-    } else {
-      setCounter((last) => 0 - Math.abs(last) - 1)
+    if (isTouchDevice) {
+      if (isRightSwipe.isRightSwipe) {
+        setCounter((last) => Math.abs(last) + 1)
+      } else {
+        setCounter((last) => 0 - Math.abs(last) - 1)
+      }
     }
   }, [isRightSwipe])
   useEffect(() => {

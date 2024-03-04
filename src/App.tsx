@@ -3,26 +3,18 @@ import useScreenSize from './hooks/useScreenSize'
 import PageWrapper from './components/PageWrapper/PageWrapper'
 import { Route, Routes, useLocation } from 'react-router'
 import HomePage from './pages/HomePage/HomePage'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import { ThemeContext } from './context/theme'
 import { useTouchDevice } from './hooks/useTouchDevice'
-import { useMousePosition } from './hooks/useMousePosition'
 import Cursor from './components/Cursor/Cursor'
 import { ProjectDetails } from './pages/ProjectDetails/ProjectDetails'
 import { ProjectIndex } from './pages/ProjectIndex/ProjectIndex'
 
 function App() {
   const isTouchDevice = useTouchDevice()
-  // const { mousePos, target } = useMousePosition()
   const [theme, setTheme] = useState('dark')
   const value = { theme, setTheme }
-  // useEffect(() => {
-  //   if (isTouchDevice) return
-  //   // console .log(mousePos);
-  // }, [mousePos, isTouchDevice])
-  // useEffect(() => {
-  //   if (isTouchDevice) return
-  // }, [target, isTouchDevice])
+
   const { width, height } = useScreenSize()
   const location = useLocation()
   return (

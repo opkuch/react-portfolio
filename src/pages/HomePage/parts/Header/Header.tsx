@@ -1,7 +1,8 @@
-import React from 'react'
 import { DarkModeSwitch } from '../../../../components/DarkModeSwitch/DarkModeSwitch'
 import { motion } from 'framer-motion'
+
 const Header = () => {
+  
   return (
     <motion.header
       initial={{ opacity: 0 }}
