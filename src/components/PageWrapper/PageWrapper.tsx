@@ -26,7 +26,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, windowSize }) => {
       initial={'hidden'}
       animate={'visible'}
       exit={'hidden'}
-      style={{ '--vh': windowSize.height } as CSSProperties}
+      style={{ '--vh': windowSize.height + 'px' } as CSSProperties}
       className="page-wrapper"
     >
         {children}

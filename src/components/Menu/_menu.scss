@@ -1,0 +1,33 @@
+.menu {
+    z-index: 9999;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    position: fixed;
+    bottom: $layout-padding-md + 1rem;
+    left: $layout-padding-sm;
+    text-transform: uppercase;
+    transform: rotate(-90deg) translateY(-100%);
+    font-size: $text-xsmall;
+    line-height: 1;
+    color: $c-text;
+    letter-spacing: 1px;
+    @media (min-width: $break-medium) {
+        left: $layout-padding-md;
+    }
+    @media (min-width: $break-large) {
+        left: $layout-padding-lg;
+    }
+    .menu-btn {
+        position: absolute;
+        top: 100%;
+        left: 100%;
+    }
+    svg {
+        position: absolute;
+        top: 0;
+        left: -50%;
+    }
+}

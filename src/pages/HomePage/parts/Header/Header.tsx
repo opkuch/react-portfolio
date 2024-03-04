@@ -1,19 +1,15 @@
 import { DarkModeSwitch } from '../../../../components/DarkModeSwitch/DarkModeSwitch'
 import { motion } from 'framer-motion'
+import { Logo } from '../../../../components/Logo/Logo'
 
 const Header = () => {
-  
   return (
     <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.55, ease: 'easeInOut' }}
     >
-      <div className="title-container">
-        <span className="">Nadav</span>
-        <span>Ben Hur</span>
-        <span>Portfolio</span>
-      </div>
+      <Logo size="large" />
       <DarkModeSwitch />
     </motion.header>
   )

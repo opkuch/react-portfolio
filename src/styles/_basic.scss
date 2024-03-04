@@ -22,8 +22,6 @@ body {
   }
 }
 
-
-
 [data-tooltip] {
   &:after {
     font-size: 15px;
@@ -46,9 +44,36 @@ h3,
 h4,
 h5,
 button,
-a,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+}
+
 p,
-ul,
-li {
-  all: unset;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }

@@ -1,0 +1,118 @@
+.mouse_scroll {
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 100px;
+	margin-top: 125px;
+}
+
+.mouse {
+  height: 42px;
+  width: 24px;
+  border-radius: 14px;
+  transform: none;
+  border: 2px solid $c-text;
+  top: 170px;
+}
+
+.wheel {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: white;
+  position: relative;
+  
+  height: 4px;
+  width: 4px;
+  border: 2px solid $c-text;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+}
+
+.wheel {
+  -webkit-animation: mouse-wheel 0.6s linear infinite;
+  -moz-animation: mouse-wheel 0.6s linear infinite;
+  animation: mouse-wheel 0.6s linear infinite;
+}
+
+@-webkit-keyframes mouse-wheel{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@-moz-keyframes mouse-wheel {
+  0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@-o-keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+
+.swipe {
+    position: relative;
+}
+
+.path {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: rgba(199, 199, 199, 0.24);
+    border-radius: 40px;
+    top: 15px;
+    left: 60px;
+    visibility: hidden;
+}
+
+.hand-icon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    transform-origin: 52% 62%;
+}
+
+@keyframes swipe-hand {
+    25% { transform: translate(20px) rotate(30deg); }
+    50% { transform: translate(-20px) rotate(-15deg); }
+    100% { transform: translate(0px) rotate(0); }
+}
+
+@keyframes swipe-dot {
+  12% {
+    visibility: visible;
+    width: 40px;
+  }
+  25% {
+    visibility: visible;
+    transform: translate(-65px);
+    width: 20px;
+  }
+  26% { visibility: hidden; }
+}

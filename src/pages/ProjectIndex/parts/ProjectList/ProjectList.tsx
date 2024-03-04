@@ -9,7 +9,7 @@ interface Props {
 
 export function ProjectsList({ projects, handleMouseHover }: Props) {
     return (
-        <ul className='projects-list clean-list'>
+        <ul className='projects-list'>
             {projects.map(proj => (
                 <li
                     data-hover
@@ -18,10 +18,10 @@ export function ProjectsList({ projects, handleMouseHover }: Props) {
                     onMouseLeave={() => handleMouseHover('leave', proj)}
                 >
                     <Link to={`/project/${proj.id}`}>
-                        <Text type='title' size='medium'>
+                        <Text type='title' size='small'>
                             {proj.title}
                         </Text>
-                        <Text size='xsmall'>{proj.description}</Text>
+                        <Text size='xsmall'>{proj.shortDescription}</Text>
                     </Link>
                 </li>
             ))}

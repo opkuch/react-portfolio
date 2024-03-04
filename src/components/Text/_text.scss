@@ -1,0 +1,51 @@
+.text {
+    transition: color 0.2s;
+    &.type-regular {
+        color: $c-text;
+        font-family: 'Quattrocento Sans';
+        line-height: 1.5;
+    }
+    &.type-title {
+        line-height: 1.5;
+        font-size: $text-medium;
+        font-family: 'SteepOldstyle';
+        color: $c-text;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &.type-muted {
+        color: $c-muted;
+    }
+    &.size-xsmall {
+        font-size: 13px;
+    }
+    &.size-small {
+        font-size: 16px;
+        line-height: 1;
+    }
+    &.size-medium {
+        line-height: 1;
+        font-size: $text-medium - 0.75rem;
+    }
+    &.size-large {
+        line-height: 1;
+        font-size: $text-medium;
+    }
+    @media (min-width: $break-medium) {
+        &.type-title {
+            font-size: $text-large;
+        }
+        &.size-xsmall {
+            font-size: $text-xsmall;
+        }
+        &.size-small {
+            font-size: $text-base;
+        }
+        &.size-medium {
+            font-size: $text-medium;
+        }
+        &.size-large {
+            font-size: $text-large;
+        }
+    }
+}

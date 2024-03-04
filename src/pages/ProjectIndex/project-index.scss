@@ -2,6 +2,7 @@
 @import './parts/ProjectList/project-list';
 
 .project-index {
+    height: var(--vh);
     .inner-content {
         gap: $layout-padding-md;
     }
