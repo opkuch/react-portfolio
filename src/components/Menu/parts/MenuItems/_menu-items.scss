@@ -1,6 +1,8 @@
 .menu-items {
     padding: $layout-padding-lg calc($layout-padding-lg / 2);
     padding-inline-end: 0;
+    font-family: SteepOldstyle;
+
     @media (min-width: $break-medium) {
         padding: $layout-padding-lg * 1.5;
     }

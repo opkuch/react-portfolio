@@ -44,6 +44,10 @@
     text-transform: uppercase;
     color: rgba(245, 245, 245, 0.7) !important;
     font-family: 'Quattrocento Sans';
+    
+    @media (max-width: 550px) {
+      display: none;
+    }
   }
   img {
     width: 100%;

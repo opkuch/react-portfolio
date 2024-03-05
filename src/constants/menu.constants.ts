@@ -6,6 +6,6 @@ export interface IMenuItem {
 
 export const menuItems: IMenuItem[] = [
     { _id: '1', title: 'Home', url: '/' },
-    { _id: '2', title: 'Project Index', url: '/project' },
+    { _id: '2', title: 'Personal Projects', url: '/project' },
     { _id: '3', title: 'Info', url: '/info' },
 ]

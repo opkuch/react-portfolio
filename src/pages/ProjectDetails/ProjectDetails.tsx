@@ -5,6 +5,7 @@ import { IProjectWithNext } from '../../types/projects.types'
 import { motion } from 'framer-motion'
 import Details from './parts/Details/Details'
 import Image from './parts/Image/Image'
+import NextProject from './parts/NextProject/NextProject'
 
 export function ProjectDetails() {
   // Component data
@@ -33,7 +34,7 @@ export function ProjectDetails() {
   function handleWheel(ev: React.WheelEvent<HTMLDivElement>) {
     if (!innerRef.current) return
     const { deltaY } = ev
-    let movementAmount = 75
+    let movementAmount = 120
     const end = (innerRef.current.scrollWidth - window.innerWidth) * -1
     if (deltaY > 0 && scrollX > end) {
       movementAmount = Math.min(movementAmount, scrollX - end)
@@ -45,12 +46,11 @@ export function ProjectDetails() {
   }
 
   return (
-    <>
+    <section className='project-details disable-scrollbar' onWheel={handleWheel}>
       <motion.div
         animate={{ x: scrollX }}
         className="inner"
         ref={innerRef}
-        onWheel={handleWheel}
       >
         {project && (
           <>
@@ -58,9 +58,10 @@ export function ProjectDetails() {
             {project.imgsURL.map((url, index) => (
               <Image key={index} imgURL={url} index={index} />
             ))}
+            <NextProject project={project}/>
           </>
         )}
       </motion.div>
-    </>
+    </section>
   )
 }

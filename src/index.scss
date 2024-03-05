@@ -11,6 +11,7 @@
 
 @import "./components/Text/text";
 @import "./components/Logo/logo";
+@import "./components/PageWrapper/page-wrapper";
 @import "./components/Menu/parts/MenuItems/menu-items";
 @import "./components/Menu/parts/MenuPopup/menu-popup";
 @import "./components/Menu/menu";
@@ -25,3 +26,4 @@
 @import "./pages/HomePage/home-page";
 @import "./pages/ProjectDetails/project-details";
 @import "./pages/ProjectIndex/project-index";
+@import "./pages/Info/info.scss";

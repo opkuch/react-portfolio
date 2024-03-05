@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
-export const Logo = ({ size }: { size: 'small' | 'large' }) => {
+export const Logo = ({ size, onToggleMenu }: { size: 'small' | 'large', onToggleMenu?: () => void }) => {
   return (
     <>
       {size === 'small' ? (
-        <Link to="/">
+        <Link to="/" onClick={onToggleMenu}>
           <div className={`logo ${size}`}>
             <span className="">Nadav</span>
             <span>Ben Hur</span>

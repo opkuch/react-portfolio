@@ -23,6 +23,10 @@
         font-size: 1.25rem;
     }
     &.large {
-        font-size: 1.75rem;
+        font-size: $text-large;
+
+        @media (max-width: 700px) {
+            font-size: $text-medium;
+        }
     }
 }

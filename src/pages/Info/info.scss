@@ -1,0 +1,18 @@
+@import './parts/InfoItem/info-item';
+.info-page {
+    .inner-content {
+        flex-direction: row-reverse;
+        overflow: hidden;
+    }
+    .text-container {
+        width: 50vw;
+
+        > *:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+}

@@ -8,7 +8,7 @@ body {
   background-color: $c-bg;
   transition: color 0.2s, background-color 0.2s;
   // Disable default cusor pointer
-  // cursor: none;
+  cursor: none;
   overscroll-behavior: none;
   overflow-y: hidden;
   font-family: $font-family-serif;
@@ -29,12 +29,11 @@ body {
   }
 }
 
-*:hover {
+*, *:hover {
   cursor: none !important;
 }
 
-.root,
-.app {
+.root {
   height: 100%;
 }
 

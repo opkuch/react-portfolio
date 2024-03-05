@@ -18,7 +18,7 @@ export function ProjectsList({ projects, handleMouseHover }: Props) {
                     onMouseLeave={() => handleMouseHover('leave', proj)}
                 >
                     <Link to={`/project/${proj.id}`}>
-                        <Text type='title' size='small'>
+                        <Text type='title' size='medium'>
                             {proj.title}
                         </Text>
                         <Text size='xsmall'>{proj.shortDescription}</Text>

@@ -4,6 +4,12 @@
 	width: 24px;
 	height: 100px;
 	margin-top: 125px;
+
+    .scroll-text {
+        position: relative;
+        top: 10px;
+        right: 15px;
+    }
 }
 
 .mouse {
@@ -77,6 +83,17 @@
 
 .swipe {
     position: relative;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+
+    .swipe-text {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .path {

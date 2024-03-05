@@ -8,7 +8,7 @@ export function useGalleryAnimation(trigger: boolean) {
 
   useEffect(() => {    
     setIsEnter(false)
-    setTimeout(() => setIsEnter(true), 700)
+    setTimeout(() => setIsEnter(true), 800)
   }, [trigger])
 
   useEffect(() => {

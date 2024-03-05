@@ -21,7 +21,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, windowSize }) => {
   }
 
   return (
-    <motion.div
+    <motion.section
       variants={containerVatiants}
       initial={'hidden'}
       animate={'visible'}
@@ -30,7 +30,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, windowSize }) => {
       className="page-wrapper"
     >
         {children}
-    </motion.div>
+    </motion.section>
   )
 }
 

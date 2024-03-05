@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { MenuItems } from '../MenuItems/MenuItems'
 import { Logo } from '../../../Logo/Logo'
-import { Text } from '../../../Text/Text'
 import { DarkModeSwitch } from '../../../DarkModeSwitch/DarkModeSwitch'
 import { IMenuItem } from '../../../../constants/menu.constants'
 
@@ -18,11 +17,8 @@ const motionEffect = {
 export function MenuPopup({ menuItems, onToggleMenu }: Props) {
     return (
         <motion.section {...motionEffect} className='menu-popup layout-padding-inline layout-padding-block'>
-            <Logo size='small' />
+            <Logo size='small' onToggleMenu={onToggleMenu}/>
             <MenuItems menuItems={menuItems} onToggleMenu={onToggleMenu} />
-            <Text type='muted' classNames='layout-padding-inline-xl'>
-                Hello world!
-            </Text>
             <DarkModeSwitch />
         </motion.section>
     )

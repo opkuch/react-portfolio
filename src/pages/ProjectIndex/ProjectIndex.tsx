@@ -25,7 +25,7 @@ export function ProjectIndex() {
   return (
     <section className="project-index">
       <PageBg />
-      <PageHeader title="projects" />
+      <PageHeader title="Personal Projects" />
       <InnerContent>
         {!isTouchDevice ? (
           <ProjectsImage

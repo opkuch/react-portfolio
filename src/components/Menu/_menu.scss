@@ -10,10 +10,11 @@
     left: $layout-padding-sm;
     text-transform: uppercase;
     transform: rotate(-90deg) translateY(-100%);
-    font-size: $text-xsmall;
+    font-size: $text-base;
     line-height: 1;
     color: $c-text;
-    letter-spacing: 1px;
+    letter-spacing: 1px;    
+    font-family: SteepOldstyle;
     @media (min-width: $break-medium) {
         left: $layout-padding-md;
     }
