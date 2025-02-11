@@ -5,10 +5,15 @@ header {
     align-items: center;
     justify-content: space-between;
 	align-items: flex-end;
-	padding-inline: 5rem;
 	padding-block-end: 1rem;
 
 	@media (max-width: 600px) {
 		padding-inline: 1rem;
+	}
+
+	.subtitle {
+		font-size: .75rem;
+		text-transform: uppercase;
+		font-family: 'Quattrocento Sans';
 	}
 }

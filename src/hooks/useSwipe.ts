@@ -19,7 +19,6 @@ export const useSwipe = ({ el }: { el: HTMLElement | null }) => {
         }
 
         const onTouchEnd = (_e: TouchEvent) => {
-            console.log(touchStart, touchEnd);
 
             if (!touchStart || !touchEnd) return
             const distance = Math.abs(touchStart - touchEnd)

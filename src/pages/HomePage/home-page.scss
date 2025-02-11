@@ -7,11 +7,16 @@
     flex-direction: column;
     justify-content: center;
     padding-block-start: 2rem;
+    max-width: 83%;
+    margin: 0 auto;
     position: relative;
     height: var(--vh);
-
+    @media (max-width: 1200px) {
+        max-width: 90%;
+    }
     @media (max-width: 700px) {
         justify-content: unset;
 
     }
+
 }

@@ -3,7 +3,7 @@ import useScreenSize from './hooks/useScreenSize'
 import PageWrapper from './components/PageWrapper/PageWrapper'
 import { Route, Routes, useLocation } from 'react-router'
 import HomePage from './pages/HomePage/HomePage'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThemeContext } from './context/theme'
 import { useTouchDevice } from './hooks/useTouchDevice'
 import Cursor from './components/Cursor/Cursor'
@@ -11,10 +11,12 @@ import { ProjectDetails } from './pages/ProjectDetails/ProjectDetails'
 import { ProjectIndex } from './pages/ProjectIndex/ProjectIndex'
 import { Menu } from './components/Menu/Menu'
 import Info from './pages/Info/Info'
+import { THEME_KEY } from './constants/theme.constants'
+
 
 function App() {
   const isTouchDevice = useTouchDevice()
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('')
   const value = { theme, setTheme }
 
   const { width, height } = useScreenSize()

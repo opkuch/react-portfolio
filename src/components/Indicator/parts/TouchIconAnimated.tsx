@@ -13,7 +13,7 @@ const TouchIconAnimated = ({ theme }: { theme: string }) => {
   return (
     <div className={`swipe`}>
       <Text type="regular" size="small" display="inline" classNames='swipe-text'>
-        SWIPE
+        SWIPE PROJECTS
       </Text>
       <TouchIcon fillColor={theme === 'light' ? '#000' : '#fff'} />
     </div>

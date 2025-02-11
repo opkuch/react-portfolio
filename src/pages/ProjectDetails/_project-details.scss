@@ -9,7 +9,6 @@
   .inner {
       transition: transform 1s cubic-bezier(0.22, 1, 0.22, 1);
       display: flex;
-      /* max-height: 100vh; */
       flex-grow: 1;
       > * {
           flex-shrink: 0;
@@ -19,10 +18,18 @@
 .inner {
 // //   transition: transform 1s cubic-bezier(0.22, 1, 0.22, 1);
   display: flex;
-  gap: 150px;
   // flex-direction: column;
   flex-grow: 1;
   height: 100vh;
+  > *:not(:first-child) {
+    margin-left: 10rem;
+    max-height: var(--vh);
+  }
+  @media (max-width: 500px) {
+    :nth-child(2) {
+      margin-left: 0;
+    }
+  }
   > * {
     flex-shrink: 0;
     // scroll-snap-align: center;
@@ -35,7 +42,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 60vw;
+    width: 75vw;
     flex: none;
     .links {
       position: absolute;
@@ -65,7 +72,7 @@
       align-items: center;
       gap: 0.5rem;
       position: absolute;
-      bottom: $layout-padding-md;
+      bottom: $layout-padding-lg;
       right: $layout-padding-sm;
 
       .scroll-animated {

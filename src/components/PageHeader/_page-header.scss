@@ -3,7 +3,7 @@
     display: flex;
     align-items: flex-end;
     width: 100%;
-    padding-inline: $layout-padding-sm + 1.5rem;
+    padding-inline: $layout-padding-sm + 1rem;
     padding-inline-end: 0;
     @media (min-width: $break-medium) {
         padding-top: $layout-padding-md;

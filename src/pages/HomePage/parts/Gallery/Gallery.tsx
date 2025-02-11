@@ -10,31 +10,16 @@ import { useSwipe } from '../../../../hooks/useSwipe'
 const Gallery = () => {
   const [counter, setCounter] = useState(0)
   const [trigger, setTrigger] = useState(true)
-  const [limit, setLimit] = useState(3)
   const { width } = useScreenSize()
   const galleryRef = useRef<HTMLUListElement | null>(null)
   const [lastIndex, setLastIndex] = useState(0)
   const [currentItems, setCurrentItems] = useState<any[]>(projectsData)
-  const scope = useGalleryAnimation(trigger)
   const isTouchDevice = useTouchDevice()
+  const [limit, setLimit] = useState(currentItems.length)
   const { isRightSwipe } = useSwipe({ el: galleryRef.current })
+  const scope = useGalleryAnimation(trigger, isRightSwipe.isRightSwipe)
 
-  const handleScroll = useCallback((e: WheelEvent) => {
-    if (e.deltaY < 0) {
-      setCounter((last) => Math.abs(last) + 1)
-    } else {
-      setCounter((last) => 0 - Math.abs(last) - 1)
-    }
-  }, [])
-  const handleKey = useCallback((e: KeyboardEvent) => {
-    if (e.code === 'ArrowRight') {
-      setCounter((last) => Math.abs(last) + 1)
-    } else if (e.code === 'ArrowLeft') {
-      setCounter((last) => 0 - Math.abs(last) - 1)
-    }
-  }, [])
-
-  useEffect(() => {
+  useEffect(() => {    
     if (isTouchDevice) {
       if (isRightSwipe.isRightSwipe) {
         setCounter((last) => Math.abs(last) + 1)
@@ -43,15 +28,6 @@ const Gallery = () => {
       }
     }
   }, [isRightSwipe])
-  useEffect(() => {
-    document.addEventListener('wheel', debounce(handleScroll, 700))
-    document.addEventListener('keydown', debounce(handleKey, 500))
-
-    return () => {
-      document.removeEventListener('wheel', () => null)
-      document.removeEventListener('keydown', () => null)
-    }
-  }, [])
 
   useEffect(() => {
     if (counter < 0 && lastIndex === 0) {
@@ -72,17 +48,16 @@ const Gallery = () => {
       const sliced = projectsData.slice(lastIndex, lastIndex + limit)
       setCurrentItems(sliced)
     }
-    setTimeout(sliceItems, 700)
+    const timeoutId = setTimeout(sliceItems, 700)
+    return () => {
+      return clearTimeout(timeoutId)
+    }
   }, [lastIndex, limit])
 
   const runSetLimit = (width: number) => {
     if (width < 700) {
       setLimit(1)
-    } else if (width < 1280) {
-      setLimit(3)
-    } else {
-      setLimit(3)
-    }
+    } 
     setLastIndex(0)
   }
 
@@ -93,7 +68,7 @@ const Gallery = () => {
     <section className="gallery-container" ref={scope}>
       <ul ref={galleryRef} className="gallery-list">
         {currentItems.map((project, idx) => {
-          return <GalleryItem key={project.id + idx} project={project} />
+          return <GalleryItem key={project.id + idx} project={project} translateFrom={isRightSwipe.isRightSwipe? "right" : 'left'}/>
         })}
       </ul>
     </section>

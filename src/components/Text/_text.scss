@@ -20,7 +20,7 @@
         font-size: 13px;
     }
     &.size-small {
-        font-size: 16px;
+        font-size: .6rem;
         line-height: 1;
     }
     &.size-medium {
@@ -39,10 +39,10 @@
             font-size: $text-xsmall;
         }
         &.size-small {
-            font-size: $text-base;
+            font-size: .7rem;
         }
         &.size-medium {
-            font-size: $text-medium;
+            font-size: 1.4rem;
         }
         &.size-large {
             font-size: $text-large;

@@ -15,7 +15,7 @@ const Cursor = () => {
     const keyframes = {
       transform: `translate(${x}px,${y}px)`,
     }
-    cursorRef.current.animate(keyframes, { duration: 300, fill: 'forwards' })
+    cursorRef.current.animate(keyframes, { duration: 40, fill: 'forwards' })
   }, [mousePos])
 
   useEffect(() => {

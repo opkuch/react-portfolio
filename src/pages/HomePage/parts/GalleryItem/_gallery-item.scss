@@ -1,13 +1,14 @@
 .down-enter-active {
-  animation: 1s down-enter forwards;
+  animation: .5s down-enter forwards .3s;
 }
 .down-leave-active {
-  animation: 1s down-leave forwards;
+  animation: .5s down-leave forwards;
 }
 
 @keyframes down-enter {
   0% {
     clip-path: inset(0 0 100% 0);
+    opacity: 0;
   }
   100% {
     clip-path: inset(0);
@@ -18,6 +19,7 @@
 @keyframes down-leave {
   0% {
     clip-path: inset(0);
+    opacity: 1;
   }
   100% {
     clip-path: inset(100% 0 0 0);
@@ -26,12 +28,12 @@
 }
 
 .gallery-item {
-  flex: 1;
   max-width: fit-content;
-  height: 350px;
   border: 1px solid #00000069;
   border-radius: 3px;
-
+  user-select: none;
+  z-index: 0;
+  transition: z-index .3s ease .3s;
   .window {
     height: 100%;
     width: 100%;
@@ -44,7 +46,7 @@
     text-transform: uppercase;
     color: rgba(245, 245, 245, 0.7) !important;
     font-family: 'Quattrocento Sans';
-    
+    opacity: 0;
     @media (max-width: 550px) {
       display: none;
     }
@@ -52,27 +54,32 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: grayscale(0.9);
+    user-select: none;
     &.image-filter {
       border: 1px solid var(--c-text);
-      -webkit-filter: saturate(0) brightness(0.8);
-      filter: saturate(0) brightness(0.8);
-      transition-duration: 0.6s;
-      transition-property: -webkit-filter;
-      transition-property: filter;
-      transition-property: filter, -webkit-filter;
-      transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
+      @media (min-width: $break-medium) {
+        -webkit-filter: saturate(0) brightness(0.8);
+        filter: saturate(0) brightness(0.8);
+        transition: filter 0.6s linear, -webkit-filter 0.6s linear, transform .75s ease 1s, -webkit-transform .75s ease;
+
+        transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
+      }
+    }
+
+    @media (min-width: $break-medium) {
+      filter: grayscale(0.9);
     }
   }
 
   &:hover {
-    transform: scale3d(10%);
+    z-index: 5;
+    transition: z-index .3s ease .1s;
 
     img {
       &.image-filter {
+        transform: scale(125%) ;
         filter: none;
-        transition-duration: 0.3s;
+        transition: filter 0.3s linear, -webkit-filter 0.3s linear, transform .75s ease .25s, -webkit-transform .75s ease .25s;
       }
     }
   }

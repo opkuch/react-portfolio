@@ -3,6 +3,10 @@
     .inner-content {
         flex-direction: row-reverse;
         overflow: hidden;
+
+        @media (max-width: 900px) {
+            flex-direction: row;
+        }
     }
     .text-container {
         width: 50vw;

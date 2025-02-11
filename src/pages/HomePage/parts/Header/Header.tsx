@@ -9,7 +9,10 @@ const Header = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.55, ease: 'easeInOut' }}
     >
-      <Logo size="large" />
+      <div>
+        <Logo size="large" />
+        <span className='subtitle'>software developer</span>
+      </div>
       <DarkModeSwitch />
     </motion.header>
   )
