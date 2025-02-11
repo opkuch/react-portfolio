@@ -7,10 +7,6 @@ header {
 	align-items: flex-end;
 	padding-block-end: 1rem;
 
-	@media (max-width: 600px) {
-		padding-inline: 1rem;
-	}
-
 	.subtitle {
 		font-size: .75rem;
 		text-transform: uppercase;
