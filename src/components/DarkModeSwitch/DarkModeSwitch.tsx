@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { ThemeContext } from '../../context/theme'
 import { THEME_KEY } from '../../constants/theme.constants'
 
@@ -13,14 +13,6 @@ export function DarkModeSwitch() {
         setTheme(mode)
         localStorage.setItem(THEME_KEY , mode)
     }
-
-    useEffect(() => {
-        const storedTheme = localStorage.getItem(THEME_KEY)
-        if (storedTheme === 'light' || storedTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', storedTheme)
-            setTheme(storedTheme)
-        }
-    }, [])
 
     return (
         <section className='light-dark-buttons'>

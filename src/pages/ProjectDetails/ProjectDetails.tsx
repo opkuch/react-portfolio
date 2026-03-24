@@ -30,18 +30,24 @@ export function ProjectDetails() {
 
   const innerRef = useRef<HTMLDivElement | null>(null)
   const [scrollX, setScrollX] = useState(0)
+  const scrollXRef = useRef(0)
 
   function handleWheel(ev: React.WheelEvent<HTMLDivElement>) {
     if (!innerRef.current) return
     const { deltaY } = ev
     let movementAmount = 120
+    const currentScrollX = scrollXRef.current
     const end = (innerRef.current.scrollWidth - window.innerWidth) * -1
-    if (deltaY > 0 && scrollX > end) {
-      movementAmount = Math.min(movementAmount, scrollX - end)
-      setScrollX((prevX) => Math.max(prevX - movementAmount, end))
-    } else if (deltaY < 0 && scrollX < 0) {
-      movementAmount = Math.min(movementAmount, -scrollX)
-      setScrollX((prevX) => Math.min(prevX + movementAmount, 0))
+    if (deltaY > 0 && currentScrollX > end) {
+      movementAmount = Math.min(movementAmount, currentScrollX - end)
+      const next = Math.max(currentScrollX - movementAmount, end)
+      scrollXRef.current = next
+      setScrollX(next)
+    } else if (deltaY < 0 && currentScrollX < 0) {
+      movementAmount = Math.min(movementAmount, -currentScrollX)
+      const next = Math.min(currentScrollX + movementAmount, 0)
+      scrollXRef.current = next
+      setScrollX(next)
     }
   }
 

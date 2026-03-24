@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { projectsData } from '../../../../data/projects.data'
 import GalleryItem from '../GalleryItem/GalleryItem'
 import { useGalleryAnimation } from '../../../../hooks/useGalleryAnimation'
@@ -11,14 +11,28 @@ const Gallery = () => {
   const [trigger, setTrigger] = useState(true)
   const { width } = useScreenSize()
   const galleryRef = useRef<HTMLUListElement | null>(null)
+  const [galleryEl, setGalleryEl] = useState<HTMLUListElement | null>(null)
+  const galleryCallbackRef = useCallback((node: HTMLUListElement | null) => {
+    galleryRef.current = node
+    setGalleryEl(node)
+  }, [])
   const [lastIndex, setLastIndex] = useState(0)
   const [currentItems, setCurrentItems] = useState<any[]>(projectsData)
   const isTouchDevice = useTouchDevice()
-  const [limit, setLimit] = useState(currentItems.length)
-  const { isRightSwipe } = useSwipe({ el: galleryRef.current })
-  const scope = useGalleryAnimation(trigger, isRightSwipe.isRightSwipe)
+  const limit = useMemo(() => (width < 700 ? 1 : projectsData.length), [width])
+  const { isRightSwipe } = useSwipe({ el: galleryEl })
+  const { scope, isEnter } = useGalleryAnimation(
+    trigger,
+    isRightSwipe.isRightSwipe
+  )
 
-  useEffect(() => {    
+  useEffect(() => {
+    if (isEnter && galleryRef.current) {
+      galleryRef.current.style.visibility = 'visible'
+    }
+  }, [isEnter])
+
+  useEffect(() => {
     if (isTouchDevice) {
       if (isRightSwipe.isRightSwipe) {
         setCounter((last) => Math.abs(last) + 1)
@@ -53,21 +67,20 @@ const Gallery = () => {
     }
   }, [lastIndex, limit])
 
-  const runSetLimit = (width: number) => {
-    if (width < 700) {
-      setLimit(1)
-    } 
-    setLastIndex(0)
-  }
-
   useEffect(() => {
-    runSetLimit(width)
+    setLastIndex(0)
   }, [width])
   return (
     <section className="gallery-container" ref={scope}>
-      <ul ref={galleryRef} className="gallery-list">
+      <ul ref={galleryCallbackRef} className="gallery-list" style={{ visibility: 'hidden' }}>
         {currentItems.map((project, idx) => {
-          return <GalleryItem key={project.id + idx} project={project} translateFrom={isRightSwipe.isRightSwipe? "right" : 'left'}/>
+          return (
+            <GalleryItem
+              key={project.id + idx}
+              project={project}
+              translateFrom={isRightSwipe.isRightSwipe ? 'right' : 'left'}
+            />
+          )
         })}
       </ul>
     </section>

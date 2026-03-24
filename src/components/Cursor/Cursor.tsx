@@ -35,7 +35,7 @@ const Cursor = () => {
         setLastHoveredTarget(parentWithDataHover || parentWithDataLinkHover || null)
     }
     handleHoverEffects(target)    
-  }, [target])
+  }, [target, lastHoveredTarget])
 
   return (
     <div className='cursor' ref={cursorRef}>

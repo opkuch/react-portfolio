@@ -1,22 +1,22 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = React.useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const updateScreenSize = useCallback(() => {
-    setScreenSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, [screenSize]);
+
   React.useEffect(() => {
-    window.addEventListener('resize', updateScreenSize);
+    const handler = () => {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+    window.addEventListener('resize', handler);
     return () => {
-      window.removeEventListener('resize', updateScreenSize);
+      window.removeEventListener('resize', handler);
     };
   }, []);
- return screenSize;
+
+  return screenSize;
 };
 
 export default useScreenSize

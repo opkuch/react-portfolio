@@ -7,7 +7,7 @@ const TouchIcon = ({ fillColor }: { fillColor: string }) => {
     if (handRef.current) {
       handRef.current.style.animation = 'swipe-hand 2s infinite'
     }
-  }, [handRef.current])
+  }, [])
 
   return (
     <div className="hand-icon" ref={handRef}>

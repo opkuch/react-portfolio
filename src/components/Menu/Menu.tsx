@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MenuPopup } from './parts/MenuPopup/MenuPopup'
@@ -10,12 +10,6 @@ export function Menu() {
   function toggleMenu() {
     setIsOpen((prev) => !prev)
   }
-
-  useEffect(() => {
-    if (isOpen) {
-      window.removeEventListener('wheel', () => {})
-    }
-  }, [isOpen])
 
   return (
     <>
